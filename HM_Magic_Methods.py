@@ -147,7 +147,6 @@ class Cube:
         return self.a == other.a
 
 
-
 obj_1 = Triangle(2, 4, 3)
 obj_2 = Triangle(4, 6, 8)
 print(obj_1.is_alike(obj_2))
