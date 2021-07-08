@@ -47,6 +47,11 @@ class Triangle:
         all_2 = sorted([other.a, other.b, other.c])
         return all_1[0] > all_2[0] and all_1[1] > all_2[1] and all_1[2] > all_2[2]
 
+    def __eq__(self, other):
+        if not isinstance(other, Triangle):
+            raise ValueError("You can't do comparison between Triangle and not Triangle")
+        return sorted([self.a, self.b, self.c]) == sorted([other.a, other.b, other.c])
+
 
 class Rectangle:
     NUMBER_OF_DELETED = 0
@@ -89,6 +94,11 @@ class Rectangle:
         all_2 = sorted([other.a, other.b])
         return all_1[0] > all_2[0] and all_1[1] > all_2[1]
 
+    def __eq__(self, other):
+        if not isinstance(other, Rectangle):
+            raise ValueError("You can't do comparison between Rectangle and not Rectangle")
+        return sorted([self.a, self.b]) == sorted([other.a, other.b])
+
 
 class Cube:
     NUMBER_OF_DELETED = 0
@@ -130,6 +140,12 @@ class Cube:
         if not isinstance(other, Cube):
             raise ValueError("You can't do comparison between Rectangle and not Rectangle")
         return self.a > other.a
+
+    def __eq__(self, other):
+        if not isinstance(other, Cube):
+            raise ValueError("You can't do comparison between Rectangle and not Rectangle")
+        return self.a == other.a
+
 
 
 obj_1 = Triangle(2, 4, 3)
